@@ -1,0 +1,15 @@
+from django.contrib import admin
+from .models import *
+# Register your models here.
+@admin.register(Blog)
+class NoteAdmin(admin.ModelAdmin):
+    list_display = ['id','title']
+
+@admin.register(User)
+class ContestAdmin(admin.ModelAdmin):
+    list_display = ['id',"username","email","otp"]
+
+
+@admin.register(BlogComment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['id','user','parent_name','comment']  
